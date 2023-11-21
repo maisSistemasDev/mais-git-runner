@@ -23,15 +23,20 @@ The "mais-git-runner" is a Docker container solution designed to host and run a 
    ```bash
    git clone https://github.com/your-username/mais-git-runner.git
    cd mais-git-runner
-Build the Docker image:
+   
+2. Build the Docker image:
 
-docker build -t mais-git-runner 
-docker-compose up -d
+   ```bash
+   docker build -t mais-git-runner 
+   docker-compose up -d
 
 Customization
 You can customize the runner by changing the environment variables in the .env file:
 
 RUNNER_NAME: The name of the runner as it will appear on GitHub.
+
 REPO_URL: The URL of the GitHub repository or organization.
+
 RUNNER_TOKEN: The token used to register the runner with GitHub.
+
 RUNNER_WORKDIR: The working directory for the runner.
