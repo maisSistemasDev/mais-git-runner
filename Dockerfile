@@ -28,10 +28,13 @@ WORKDIR /home/runner
 RUN curl -o actions-runner-linux-x64-2.277.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.277.1/actions-runner-linux-x64-2.277.1.tar.gz && \
     tar xzf ./actions-runner-linux-x64-2.277.1.tar.gz && \
     rm actions-runner-linux-x64-2.277.1.tar.gz
+RUN ./bin/installdependencies.sh
 
 # Copia o script de entrada
 COPY entrypoint.sh .
 
+# Dá permissão de execução para o script de entrada
+RUN chmod +x entrypoint.sh
 
 # Define o script de entrada como o ponto de entrada do container
 ENTRYPOINT ["./entrypoint.sh"]
