@@ -30,7 +30,8 @@ The "mais-git-runner" is a Docker container solution designed to host and run a 
    docker build -t mais-git-runner 
    docker-compose up -d
 
-Customization
+## Customization
+
 You can customize the runner by changing the environment variables in the .env file:
 
 RUNNER_NAME: The name of the runner as it will appear on GitHub.
