@@ -33,7 +33,7 @@ RUN curl -o actions-runner-linux-x64-2.277.1.tar.gz -L https://github.com/action
 COPY entrypoint.sh .
 
 # Dá permissão de execução para o script de entrada
-RUN sudo chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 # Define o script de entrada como o ponto de entrada do container
 ENTRYPOINT ["./entrypoint.sh"]
