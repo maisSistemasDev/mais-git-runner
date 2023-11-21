@@ -25,10 +25,9 @@ The "mais-git-runner" is a Docker container solution designed to host and run a 
    cd mais-git-runner
 Build the Docker image:
 
-docker build -t mais-git-runner .
-
-
+docker build -t mais-git-runner 
 docker-compose up -d
+
 Customization
 You can customize the runner by changing the environment variables in the .env file:
 
