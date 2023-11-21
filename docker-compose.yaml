@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  github-runner:
+    image: mais-git-runner:latest
+    container_name: mais-git-runner
+    env_file:
+      - .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
