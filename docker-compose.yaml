@@ -5,9 +5,9 @@ services:
     image: mais-git-runner:latest
     container_name: mais-git-runner
     environment:
-      - RUNNER_NAME=CORUJA
-      - REPO_URL=https://github.com/maisSistemasDev/corujaGPT-backend"
-      - RUNNER_TOKEN=BCXWNED4D42WFGFY24EZEI3FLUGYS
+      - RUNNER_NAME="runner-default"
+      - REPO_URL=""
+      - RUNNER_TOKEN=""
       - RUNNER_WORKDIR=/tmp/runner_work
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
