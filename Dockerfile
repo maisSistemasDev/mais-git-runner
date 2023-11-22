@@ -18,6 +18,10 @@ RUN apt-get update && \
 # Cria um usuário para o runner (opcional)
 RUN useradd -m runner
 
+# Adiciona o usuário 'runner' ao grupo 'sudo' e configura o sudoers
+RUN usermod -aG sudo runner && \
+    echo "runner ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/runner
+
 # Troca para o usuário 'runner'
 USER runner
 
@@ -31,13 +35,15 @@ RUN curl -o actions-runner-linux-x64-2.277.1.tar.gz -L https://github.com/action
 
 # Instala as dependências do .NET Core
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 3.0 && \
-    ln -s /root/.dotnet/dotnet /usr/local/bin
+    ln -s /home/runner/.dotnet/dotnet /usr/local/bin
 
 # Copia o script de entrada
 COPY entrypoint.sh .
 
-# Dá permissão de execução para o script de entrada
+# Dá permissão de execução para o script de entrada como root
+USER root
 RUN chmod +x entrypoint.sh
+USER runner
 
 # Define o script de entrada como o ponto de entrada do container
 ENTRYPOINT ["./entrypoint.sh"]
