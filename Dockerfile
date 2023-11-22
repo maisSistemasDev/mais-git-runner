@@ -13,8 +13,12 @@ RUN apt-get update && \
     jq \
     tar \
     build-essential \
+    libicu-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Instala as dependências do .NET Core
+RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 3.0 && \
+    ln -s /root/.dotnet/dotnet /usr/local/bin
 # Cria um usuário para o runner (opcional)
 RUN useradd -m runner
 
