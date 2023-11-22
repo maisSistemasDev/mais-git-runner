@@ -9,6 +9,4 @@ services:
       - REPO_URL=""
       - RUNNER_TOKEN=""
       - RUNNER_WORKDIR=/tmp/runner_work
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
     restart: no
