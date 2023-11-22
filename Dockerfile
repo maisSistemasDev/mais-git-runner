@@ -39,6 +39,7 @@ RUN curl -o actions-runner-linux-x64-2.277.1.tar.gz -L https://github.com/action
 
 # Instala as dependências do .NET Core
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 3.0 && \
+    rm -f /usr/local/bin/dotnet && \
     ln -s /home/runner/.dotnet/dotnet /usr/local/bin
 
 # Copia o script de entrada
