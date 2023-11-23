@@ -32,7 +32,7 @@ The "mais-git-runner" is a Docker container solution designed to host and run a 
 
 ## Customization
 
-You can customize the runner by changing the environment variables in the .env file:
+You can customize the runner by changing the environment variables in the docker-compose.yaml file:
 
 RUNNER_NAME: The name of the runner as it will appear on GitHub.
 
@@ -40,4 +40,12 @@ REPO_URL: The URL of the GitHub repository or organization.
 
 RUNNER_TOKEN: The token used to register the runner with GitHub.
 
-RUNNER_WORKDIR: The working directory for the runner.
+
+## Using docker compose with docker hub image
+
+You don't need to clone this repository. The image is on Docker Hub! Just copy the contents of docker-compose.yaml and...
+
+1. Run:
+
+   ```bash
+   docker-compose up -d
