@@ -33,9 +33,9 @@ USER runner
 WORKDIR /home/runner
 
 # Baixa o script de instalação do GitHub Actions runner e o instala
-RUN curl -o actions-runner-linux-x64-2.277.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.277.1/actions-runner-linux-x64-2.277.1.tar.gz && \
-    tar xzf ./actions-runner-linux-x64-2.277.1.tar.gz && \
-    rm actions-runner-linux-x64-2.277.1.tar.gz
+RUN curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz && \
+    tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz && \
+    rm actions-runner-linux-x64-2.311.0.tar.gz
 
 
 # Copia o script de entrada

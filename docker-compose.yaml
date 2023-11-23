@@ -1,12 +1,11 @@
 version: '3.8'
 
 services:
-  github-runner:
+  mais-git-runner:
     image: mais-git-runner:latest
     container_name: mais-git-runner
     environment:
-      - RUNNER_NAME="runner-default"
-      - REPO_URL=""
-      - RUNNER_TOKEN=""
+      - RUNNER_NAME=GIT-RUNNER
+      - REPO_URL=https://github.com/maisSistemasDev/corujaGPT-backend
+      - RUNNER_TOKEN=BCXWNEEGLWD4EO2TDNKUGQ3FL65W2
       - RUNNER_WORKDIR=/tmp/runner_work
-    restart: no
