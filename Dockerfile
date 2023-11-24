@@ -37,6 +37,7 @@ RUN curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/action
     tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz && \
     rm actions-runner-linux-x64-2.311.0.tar.gz
 
+RUN rm config.sh
 
 # Copia o script de entrada
 COPY entrypoint.sh .
