@@ -32,12 +32,12 @@ USER runner
 # Define o diretório de trabalho
 WORKDIR /home/runner
 
+
+
 # Baixa o script de instalação do GitHub Actions runner e o instala
 RUN curl -o actions-runner-linux-x64-2.311.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.311.0/actions-runner-linux-x64-2.311.0.tar.gz && \
     tar xzf ./actions-runner-linux-x64-2.311.0.tar.gz && \
     rm actions-runner-linux-x64-2.311.0.tar.gz
-
-RUN rm config.sh
 
 # Copia o script de entrada
 COPY entrypoint.sh .

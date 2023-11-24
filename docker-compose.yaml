@@ -5,7 +5,7 @@ services:
     image: mais-git-runner:latest
     container_name: mais-git-runner
     environment:
-      - RUNNER_NAME=GIT-RUNNER
-      - REPO_URL=https://github.com/your_user/your_repo
-      - RUNNER_TOKEN=your_token
-      - RUNNER_WORKDIR=/tmp/runner_work
+      - RUNNER_NAME=GIT-RUNNER  # O nome atribuído ao runner.
+      - REPO_URL=https://github.com/your_user/your_repo  # URL do repositório GitHub que o runner irá acessar.
+      - RUNNER_TOKEN=your_token # Token de acesso para o repositório GitHub.
+      - RUNNER_WORKDIR=/tmp/runner_work 
